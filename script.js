@@ -32,6 +32,8 @@ inputButtons.forEach(button => {
 function playRound(computerSelection, playerSelection) {
     
     let state;
+    const mainGame = document.querySelector(".game");
+    const output = document.querySelector(".status");
 
     if(playerSelection == computerSelection) {
         state = "Draw";
@@ -77,6 +79,6 @@ function playRound(computerSelection, playerSelection) {
             default:
                 break;
         }
-    }    
-    
+    }
+    output.textContent = `${state}`;
 }

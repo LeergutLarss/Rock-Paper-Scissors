@@ -4,3 +4,15 @@ body {
     align-items: center;
     height: 100vh;
 }
+
+.game {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.status {
+    min-height: 18px;
+}
