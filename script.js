@@ -13,7 +13,7 @@ function getComputerChoice () {
             choice = "Scissors";
             break;
         default:
-            console.error("Computer Choice out of Bounds");
+            alert("Computer Choice out of Bounds");
             break;
     }
     return choice;
@@ -88,38 +88,4 @@ function playRound(computerSelection, playerSelection) {
     }    
     console.log(`${state} ${winner} beats ${looser}`);
     return state;
-    
 }
-
-function game() {
-    let pointsPlayer = 0;
-    let pointsComputer = 0;
-
-    for(let i = 0; i < 5; i++) {
-        let computerChoice = getComputerChoice();
-        let playerSelection = prompt("Enter Rock Paper or Scissors:")
-        
-        let state = playRound(computerChoice,playerSelection);
-        switch(state) {
-            case "Draw":
-                break;
-            case "You Win!":
-                pointsPlayer++;
-                break;
-            case "You Lose!":
-                pointsComputer++;
-                break;
-            default:
-                console.error("Points Counter")
-                break;
-        }
-        console.log(`Your points: ${pointsPlayer} Points Computer: ${pointsComputer}`);
-    }
-    if(pointsPlayer > pointsComputer) {
-        console.log("You Won the Game!");
-    } else {
-        console.log("You Lost the Game");
-    }
-}
-
-game();
