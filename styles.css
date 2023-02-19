@@ -13,6 +13,12 @@ body {
     gap: 10px;
 }
 
+.scoreBoard {
+    display: flex;
+    gap: 40px;
+    margin-bottom: 20px;
+}
+
 .status {
     min-height: 18px;
 }
