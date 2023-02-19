@@ -18,32 +18,32 @@ function getComputerChoice () {
     }
     return choice;
 }
+//Player input
+
+const inputButtons = document.querySelectorAll(".game button");
+
+inputButtons.forEach(button => {
+    button.addEventListener("click", () => {
+        playRound(getComputerChoice(), button.id);
+    });
+});
+
 
 function playRound(computerSelection, playerSelection) {
-    // Clean Player input
-    let playerSelectionClean = playerSelection.charAt(0).toUpperCase() + playerSelection.slice(1).toLowerCase();
-
+    
     let state;
-    let winner;
-    let looser;
 
-    if(playerSelectionClean == computerSelection) {
+    if(playerSelection == computerSelection) {
         state = "Draw";
-        winner = computerSelection;
-        looser = playerSelectionClean;
     } else {
-        switch (playerSelectionClean) {
+        switch (playerSelection) {
             case "Rock":
                 switch (computerSelection) {
                     case "Paper":
                         state = "You Lose!";
-                        winner = computerSelection;
-                        looser = playerSelection;
                         break;
                     case "Scissors":
                         state = "You Win!";
-                        winner = playerSelectionClean;
-                        looser = computerSelection;
                         break;    
                     default:
                         break;
@@ -54,13 +54,9 @@ function playRound(computerSelection, playerSelection) {
                 switch (computerSelection) {
                     case "Rock":
                         state = "You Lose!";
-                        winner = computerSelection;
-                        looser = playerSelection;
                         break;
                     case "Paper":
                         state = "You Win!";
-                        winner = playerSelectionClean;
-                        looser = computerSelection;
                         break;    
                     default:
                         break;
@@ -71,13 +67,9 @@ function playRound(computerSelection, playerSelection) {
                 switch (computerSelection) {
                     case "Scissors":
                         state = "You Lose!";
-                        winner = computerSelection;
-                        looser = playerSelection;
                         break;
                     case "Rock":
                         state = "You Win!";
-                        winner = playerSelectionClean;
-                        looser = computerSelection;
                         break;    
                     default:
                         break;
@@ -86,6 +78,5 @@ function playRound(computerSelection, playerSelection) {
                 break;
         }
     }    
-    console.log(`${state} ${winner} beats ${looser}`);
-    return state;
+    
 }
